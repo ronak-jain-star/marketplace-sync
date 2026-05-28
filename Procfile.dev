@@ -1,0 +1,7 @@
+web: bin/rails server -p 3001
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+outbox: bundle exec rails runner "OutboxRelay.run"
+amazon_consumer: bundle exec rails runner "ChannelConsumer.run(channel: 'amazon')"
+walmart_consumer: bundle exec rails runner "ChannelConsumer.run(channel: 'walmart')"
+fake_amazon: bundle exec ruby fakes/amazon_server.rb
+fake_walmart: bundle exec ruby fakes/walmart_server.rb
