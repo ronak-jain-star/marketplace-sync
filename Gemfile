@@ -22,6 +22,8 @@ group :development, :test do
   gem "faker"
   gem "webmock"
   gem "simplecov", require: false
+  gem "test-prof", "~> 1.4"
+  gem "mock_redis"
 end
 
 group :development do
